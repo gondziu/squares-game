@@ -41,15 +41,19 @@ function GameModal({
               Układaj elementy na jednej z czterech plansz 2×2 i zdobądź jak najwięcej punktów.
             </p>
             <ul className="mt-6 space-y-3 text-left text-sm text-slate-300">
-              <li>• Strzałki lub WASD wybierają planszę; na telefonie stuknij wybraną planszę.</li>
+              <li>• Strzałki lub WSAD wybierają jedną z czterech bocznych plansz; na telefonie stuknij wybraną planszę.</li>
               <li>
-                • Umieść element w jego oznaczonym polu. Limit zaczyna się od{' '}
-                {initialTimeLimit.toFixed(1)} s i skraca o{' '}
-                {timeDecrementPerTile.toFixed(1)} s po każdym zużytym elemencie
+                • Umieść element na jednym z boków. Każdy ruch ma ograniczony czas
+                na wykonanie. Limit czasu zaczyna się od{' '}
+                {initialTimeLimit.toFixed(1)}s i skraca o{' '}
+                {timeDecrementPerTile.toFixed(1)}s po każdym zużytym kwadracie
                 (ruchu, błędzie lub timeoutcie), do minimum {minTimeLimit.toFixed(1)} s.
               </li>
-              <li>• Pełna plansza daje 100 punktów za jeden kolor albo 10 za różne kolory.</li>
-              <li>• Błędny ruch lub koniec czasu odbiera życie. Masz 3 życia.</li>
+              <li>• Koniec czasu odbiera życie. Masz 3 życia.</li>
+              <li>• Nie można przenosić elementu na już zajęte pole — jest to błąd i skutkuje stratą życia.</li>
+              <li>• Pełny bok różnych kolorów tworzących kwadrat 2x2 daje 10 punktów, a bok o tym samym kolorze 100 punktów.</li>
+
+
             </ul>
             <button
               autoFocus
